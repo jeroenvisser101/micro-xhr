@@ -119,7 +119,7 @@
                 continue;
             }
 
-            // If the parent is set, we add the data as child of the parent
+            // If the parent is set, we d the data as child of the parent
             if (parent) {
                 string += parent + '[' + encodeURIComponent(key) + ']';
             } else {
@@ -164,7 +164,7 @@
          * @param {function} fn The callback function itself
          * @param {string} [dataType]
          */
-        this.callbacks.add = function (type, fn, dataType) {
+        this.callbacks.d = function (type, fn, dataType) {
             this.push({type: type, fn: fn, dataType: dataType});
         };
 
@@ -175,7 +175,7 @@
          * @param [dataType]
          */
         this.done = function (callback, dataType) {
-            this.callbacks.add('done', callback, dataType);
+            this.callbacks.d('done', callback, dataType);
 
             // Make sure the callbacks can be chained
             return this;
@@ -187,7 +187,7 @@
          * @param {function} callback
          */
         this.fail = function (callback) {
-            this.callbacks.add('fail', callback);
+            this.callbacks.d('fail', callback);
 
             // Make sure the callbacks can be chained
             return this;
@@ -199,7 +199,7 @@
          * @param {function} callback
          */
         this.always = function (callback) {
-            this.callbacks.add('always', callback);
+            this.callbacks.d('always', callback);
 
             // Make sure the callbacks can be chained
             return this;
